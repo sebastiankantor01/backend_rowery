@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 public class Bike {
     private int id;
     private String name;
-    private BikeType type;
-    private BikeSize size;
+    private BikeSize type;
+    private BikeType size;
     private boolean available;
     private double pricePerDay;
     private String description;
