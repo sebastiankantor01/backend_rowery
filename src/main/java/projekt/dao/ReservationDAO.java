@@ -25,5 +25,8 @@ public class ReservationDAO {
             stmt.executeUpdate();
         }
     }
+
+    // TODO: ReservationByUser - żeby uzyskać historię wypożyczeń
+    //TODO: cancelReservation - pytanie czy dajemy możliwość odwołania?
 }
 
