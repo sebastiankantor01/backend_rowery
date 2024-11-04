@@ -24,5 +24,9 @@ public class UserDAO {
             stmt.executeUpdate();
         }
     }
+
+    //TODO: UserById - zwrócenie danych osobowych
+    //TODO: editUser - do edycji danych osobowych
+
 }
 

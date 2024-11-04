@@ -1,8 +1,8 @@
 package projekt.entity;
 
 public enum BikeType {
-    S,
-    M,
-    L,
-    XL
+    GORSKI,
+    SZOSOWY,
+    ELEKTRYCZNY,
+    MIEJSKI
 }
