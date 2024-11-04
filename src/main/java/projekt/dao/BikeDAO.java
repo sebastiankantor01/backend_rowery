@@ -113,5 +113,4 @@ public class BikeDAO {
         );
     }
 
-    //TODO: nie wiem jak z wyświetlaniem dostępnych rowerów?
 }
