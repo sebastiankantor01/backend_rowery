@@ -30,7 +30,7 @@ public class UserDAO {
     }
 
     public User getUserById(int id) throws SQLException {
-        String sql = "SELECT * FROM bike WHERE id = ?";
+        String sql = "SELECT * FROM user WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
@@ -56,7 +56,7 @@ public class UserDAO {
             stmt.setString(3, user.getEmail());
 
             int rowsUpdated = stmt.executeUpdate();
-            return rowsUpdated > 0; // Zwraca true, jeśli rower został zaktualizowany
+            return rowsUpdated > 0; // Zwraca true, jeśli user został zaktualizowany
         }
     }
 
