@@ -1,6 +1,8 @@
 package projekt.servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import projekt.DatabaseConnection;
 import projekt.dao.BikeDAO;
 import projekt.entity.Bike;
 import projekt.entity.BikeSize;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
@@ -20,6 +23,12 @@ import java.util.Optional;
 public class BikeServlet extends HttpServlet {
     private BikeDAO bikeDAO;
     private final ObjectMapper objectMapper = new ObjectMapper();
+
+    @Override
+    public void init() throws ServletException {
+        Connection connection = DatabaseConnection.getInstance().getConnection();
+        bikeDAO = new BikeDAO(connection);
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
