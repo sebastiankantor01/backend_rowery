@@ -2,7 +2,7 @@ package projekt.servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import projekt.dao.UserDAO;
-import projekt.entity.User;
+import projekt.entity.Users;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,10 +31,10 @@ public class UserServlet extends HttpServlet
 
         try {
             int userId = Integer.parseInt(pathInfo.split("/")[1]);
-            User user = objectMapper.readValue(req.getInputStream(), User.class);
-            user.setId(userId);
+            Users users = objectMapper.readValue(req.getInputStream(), Users.class);
+            users.setId(userId);
 
-            boolean updated = userDAO.updateUser(user);
+            boolean updated = userDAO.updateUser(users);
             if (updated) {
                 resp.setStatus(HttpServletResponse.SC_OK);
                 resp.getWriter().write("Pomyślnie zaktualizowano dane usera.");
